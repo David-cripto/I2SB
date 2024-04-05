@@ -188,8 +188,8 @@ def build_sr4x(opt, log, sr_filter, image_size):
 
     factor = 4
 
-    sr_bicubic = build_sr_bicubic(factor, opt.device, image_size)
-    sr_pool = build_sr_pool(factor, opt.device, image_size)
+    sr_bicubic = build_sr_bicubic(factor, opt.device, image_size, opt.c_in)
+    sr_pool = build_sr_pool(factor, opt.device, image_size, opt.c_in)
 
     upsample = torch.nn.Upsample(scale_factor=factor, mode='nearest')
 
